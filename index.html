@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portafolio de Ana Córdoba — Full Stack Developer especializada en aplicaciones móviles y diseño UI/UX. Descubre mis proyectos y habilidades.">
+  <meta name="author" content="Ana Córdoba">
+  <meta name="theme-color" content="#0D0B1A">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ana Córdoba — Full Stack Developer">
+  <meta property="og:description" content="Portafolio profesional de desarrollo Full Stack, apps móviles y diseño UI/UX.">
+  <meta property="og:type" content="website">
+
+  <title>Ana Córdoba — Full Stack Developer</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons (CDN) -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+</head>
+
+<body>
+  <!-- ========== CUSTOM CURSOR ========== -->
+  <div id="custom-cursor" class="custom-cursor" aria-hidden="true">
+    <div class="custom-cursor__dot"></div>
+    <div class="custom-cursor__ring"></div>
+  </div>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Navegación principal">
+    <div class="navbar__inner">
+      <a href="#hero" class="navbar__logo" id="nav-logo" aria-label="Ir al inicio">
+        &lt;AC /&gt;
+      </a>
+
+      <button class="navbar__toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="navbar__links" id="nav-links" role="menubar">
+        <li role="none"><a href="#hero" class="navbar__link active" role="menuitem" id="nav-link-hero">Inicio</a></li>
+        <li role="none"><a href="#about" class="navbar__link" role="menuitem" id="nav-link-about">Sobre mí</a></li>
+        <li role="none"><a href="#projects" class="navbar__link" role="menuitem" id="nav-link-projects">Proyectos</a></li>
+        <li role="none"><a href="#skills" class="navbar__link" role="menuitem" id="nav-link-skills">Habilidades</a></li>
+        <li role="none"><a href="#footer" class="navbar__link" role="menuitem" id="nav-link-contact">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero section" id="hero">
+    <!-- Particle canvas -->
+    <canvas class="hero__particles" id="particles-canvas" aria-hidden="true"></canvas>
+
+    <!-- Gradient blobs -->
+    <div class="hero__blobs" aria-hidden="true">
+      <div class="hero__blob hero__blob--1"></div>
+      <div class="hero__blob hero__blob--2"></div>
+      <div class="hero__blob hero__blob--3"></div>
+    </div>
+
+    <!-- Decorative rings -->
+    <div class="hero__ring hero__ring--1" aria-hidden="true"></div>
+    <div class="hero__ring hero__ring--2" aria-hidden="true"></div>
+
+    <!-- Content -->
+    <div class="hero__content">
+      <p class="hero__greeting">&lt; ¡Hola, mundo! /&gt;</p>
+
+      <h1 class="hero__name">
+        Soy <span class="hero__name-highlight">Ana Córdoba</span>
+      </h1>
+
+      <p class="hero__role">Full Stack Developer · Mobile Apps · UI/UX Design</p>
+
+      <div class="hero__typing" id="typing-container" aria-live="polite">
+        <span id="typing-text"></span><span class="hero__typing-cursor"></span>
+      </div>
+
+      <div class="hero__actions">
+        <a href="#projects" class="btn btn-primary" id="hero-cta">
+          <i data-lucide="folder-open" style="width:18px;height:18px"></i>
+          Ver Proyectos
+        </a>
+        <a href="https://github.com/Anacordoba10" target="_blank" rel="noopener noreferrer" class="btn btn-outline" id="hero-github">
+          <i data-lucide="github" style="width:18px;height:18px"></i>
+          GitHub
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="hero__scroll-indicator" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT SECTION ========== -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Sobre mí</span>
+        <h2 class="section-title">Conóceme un poco más</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="about__content">
+        <div class="about__image-wrapper reveal">
+          <div class="about__image-frame" id="about-avatar">
+            <img src="assets/images/avatar.webp" alt="Foto de Ana Córdoba" loading="lazy">
+          </div>
+          <div class="about__image-decoration" aria-hidden="true"></div>
+        </div>
+
+        <div class="about__text reveal reveal-delay-2">
+          <h3>Desarrolladora apasionada por crear experiencias digitales <span class="text-gradient">increíbles</span></h3>
+          <p>
+            Soy Ana Córdoba, una Full Stack Developer con enfoque en aplicaciones móviles y diseño UI/UX. 
+            Me apasiona combinar la funcionalidad técnica con diseños intuitivos y visualmente atractivos 
+            para crear productos que las personas realmente disfruten usar.
+          </p>
+          <p>
+            Mi enfoque se centra en escribir código limpio y escalable, siempre buscando la mejor experiencia 
+            de usuario posible. Desde el concepto hasta la implementación, me encanta cada etapa del 
+            proceso creativo.
+          </p>
+
+          <div class="about__highlights">
+            <div class="about__highlight-item">
+              <span class="about__highlight-icon">🚀</span>
+              <span class="about__highlight-text">Full Stack Development</span>
+            </div>
+            <div class="about__highlight-item">
+              <span class="about__highlight-icon">📱</span>
+              <span class="about__highlight-text">Mobile Apps</span>
+            </div>
+            <div class="about__highlight-item">
+              <span class="about__highlight-icon">🎨</span>
+              <span class="about__highlight-text">UI/UX Design</span>
+            </div>
+            <div class="about__highlight-item">
+              <span class="about__highlight-icon">💡</span>
+              <span class="about__highlight-text">Soluciones Creativas</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS SECTION ========== -->
+  <section class="projects section" id="projects">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Portafolio</span>
+        <h2 class="section-title">Proyectos Destacados</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="projects__grid">
+        <!-- Project 1 -->
+        <article class="project-card glass-card reveal" id="project-1">
+          <div class="project-card__image">
+            <img src="assets/images/project-1.webp" alt="App móvil de productividad">
+            <div class="project-card__image-overlay"></div>
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">TaskFlow App</h3>
+            <p class="project-card__description">
+              Aplicación móvil de gestión de tareas con diseño intuitivo, notificaciones inteligentes y sincronización en la nube en tiempo real.
+            </p>
+            <div class="project-card__tags">
+              <span class="badge">React Native</span>
+              <span class="badge">Firebase</span>
+              <span class="badge">UI/UX</span>
+            </div>
+            <div class="project-card__actions">
+              <a href="#" class="btn btn-outline btn-sm" target="_blank" rel="noopener noreferrer" id="project-1-github">
+                <i data-lucide="github" style="width:16px;height:16px"></i>
+                Código
+              </a>
+              <a href="#" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer" id="project-1-demo">
+                <i data-lucide="external-link" style="width:16px;height:16px"></i>
+                Demo
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card glass-card reveal reveal-delay-1" id="project-2">
+          <div class="project-card__image">
+            <img src="assets/images/project-2.webp" alt="Dashboard de analíticas">
+            <div class="project-card__image-overlay"></div>
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">DataVision Dashboard</h3>
+            <p class="project-card__description">
+              Panel de analíticas interactivo con visualización de datos en tiempo real, gráficos dinámicos y reportes automatizados.
+            </p>
+            <div class="project-card__tags">
+              <span class="badge">React</span>
+              <span class="badge">Node.js</span>
+              <span class="badge">MongoDB</span>
+            </div>
+            <div class="project-card__actions">
+              <a href="#" class="btn btn-outline btn-sm" target="_blank" rel="noopener noreferrer" id="project-2-github">
+                <i data-lucide="github" style="width:16px;height:16px"></i>
+                Código
+              </a>
+              <a href="#" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer" id="project-2-demo">
+                <i data-lucide="external-link" style="width:16px;height:16px"></i>
+                Demo
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card glass-card reveal reveal-delay-2" id="project-3">
+          <div class="project-card__image">
+            <img src="assets/images/project-3.webp" alt="E-commerce web">
+            <div class="project-card__image-overlay"></div>
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">ShopVibe E-Commerce</h3>
+            <p class="project-card__description">
+              Plataforma e-commerce moderna con carrito inteligente, pasarela de pagos integrada y experiencia de compra fluida.
+            </p>
+            <div class="project-card__tags">
+              <span class="badge">Next.js</span>
+              <span class="badge">Stripe</span>
+              <span class="badge">PostgreSQL</span>
+            </div>
+            <div class="project-card__actions">
+              <a href="#" class="btn btn-outline btn-sm" target="_blank" rel="noopener noreferrer" id="project-3-github">
+                <i data-lucide="github" style="width:16px;height:16px"></i>
+                Código
+              </a>
+              <a href="#" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer" id="project-3-demo">
+                <i data-lucide="external-link" style="width:16px;height:16px"></i>
+                Demo
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project-card glass-card reveal reveal-delay-3" id="project-4">
+          <div class="project-card__image">
+            <img src="assets/images/project-4.webp" alt="App de diseño UI/UX">
+            <div class="project-card__image-overlay"></div>
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">PixelCraft UI Kit</h3>
+            <p class="project-card__description">
+              Sistema de diseño completo con componentes reutilizables, guía de estilos y prototipos interactivos para equipos de desarrollo.
+            </p>
+            <div class="project-card__tags">
+              <span class="badge">Figma</span>
+              <span class="badge">Design System</span>
+              <span class="badge">CSS</span>
+            </div>
+            <div class="project-card__actions">
+              <a href="#" class="btn btn-outline btn-sm" target="_blank" rel="noopener noreferrer" id="project-4-github">
+                <i data-lucide="github" style="width:16px;height:16px"></i>
+                Código
+              </a>
+              <a href="#" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer" id="project-4-demo">
+                <i data-lucide="external-link" style="width:16px;height:16px"></i>
+                Demo
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS SECTION ========== -->
+  <section class="skills section" id="skills">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Habilidades</span>
+        <h2 class="section-title">Mi Tech Stack</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="skills__categories">
+        <!-- Lenguajes & Core -->
+        <div class="reveal">
+          <h3 class="skills__category-title">Lenguajes & Core</h3>
+          <div class="skills__grid">
+            <div class="skill-card" style="--skill-level: 92%">
+              <div class="skill-card__icon">⚡</div>
+              <span class="skill-card__name">JavaScript (ES6+)</span>
+              <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+            </div>
+            <div class="skill-card" style="--skill-level: 88%">
+              <div class="skill-card__icon">📘</div>
+              <span class="skill-card__name">TypeScript</span>
+              <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+            </div>
+            <div class="skill-card" style="--skill-level: 85%">
+              <div class="skill-card__icon">🎯</div>
+              <span class="skill-card__name">Dart</span>
+              <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+            </div>
+            <div class="skill-card" style="--skill-level: 80%">
+              <div class="skill-card__icon">🐍</div>
+              <span class="skill-card__name">Python</span>
+              <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+            </div>
+            <div class="skill-card" style="--skill-level: 78%">
+              <div class="skill-card__icon">☕</div>
+              <span class="skill-card__name">Java</span>
+              <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+            </div>
+            <div class="skill-card" style="--skill-level: 95%">
+              <div class="skill-card__icon">🌐</div>
+              <span class="skill-card__name">HTML5</span>
+              <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+            </div>
+            <div class="skill-card" style="--skill-level: 93%">
+              <div class="skill-card__icon">🎨</div>
+              <span class="skill-card__name">CSS3</span>
+              <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+            </div>
+            <div class="skill-card" style="--skill-level: 82%">
+              <div class="skill-card__icon">🗃️</div>
+              <span class="skill-card__name">SQL</span>
+              <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+            </div>
+            <div class="skill-card" style="--skill-level: 75%">
+              <div class="skill-card__icon">🐘</div>
+              <span class="skill-card__name">PHP</span>
+              <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Frontend Web -->
+        <div class="reveal">
+          <h3 class="skills__category-title">Frontend Web</h3>
+          <div class="skills__grid">
+            <div class="skill-card" style="--skill-level: 90%">
+              <div class="skill-card__icon">⚛️</div>
+              <span class="skill-card__name">React</span>
+              <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+            </div>
+            <div class="skill-card" style="--skill-level: 85%">
+              <div class="skill-card__icon">🅰️</div>
+              <span class="skill-card__name">Angular</span>
+              <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+            </div>
+            <div class="skill-card" style="--skill-level: 88%">
+              <div class="skill-card__icon">🌊</div>
+              <span class="skill-card__name">Tailwind CSS</span>
+              <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+            </div>
+            <div class="skill-card" style="--skill-level: 85%">
+              <div class="skill-card__icon">▲</div>
+              <span class="skill-card__name">Next.js</span>
+              <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+            </div>
+            <div class="skill-card" style="--skill-level: 82%">
+              <div class="skill-card__icon">💚</div>
+              <span class="skill-card__name">Vue.js</span>
+              <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+            </div>
+            <div class="skill-card" style="--skill-level: 87%">
+              <div class="skill-card__icon">⚡</div>
+              <span class="skill-card__name">Vite</span>
+              <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+            </div>
+            <div class="skill-card" style="--skill-level: 85%">
+              <div class="skill-card__icon">🅱️</div>
+              <span class="skill-card__name">Bootstrap</span>
+              <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Dev -->
+        <div class="reveal">
+          <h3 class="skills__category-title">Mobile Dev</h3>
+          <div class="skills__grid">
+            <div class="skill-card" style="--skill-level: 88%">
+              <div class="skill-card__icon">🦋</div>
+              <span class="skill-card__name">Flutter</span>
+              <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+            </div>
+            <div class="skill-card" style="--skill-level: 87%">
+              <div class="skill-card__icon">📱</div>
+              <span class="skill-card__name">React Native</span>
+              <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+            </div>
+            <div class="skill-card" style="--skill-level: 80%">
+              <div class="skill-card__icon">⚙️</div>
+              <span class="skill-card__name">Ionic</span>
+              <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Backend & DB -->
+        <div class="reveal">
+          <h3 class="skills__category-title">Backend & DB</h3>
+          <div class="skills__grid">
+            <div class="skill-card" style="--skill-level: 88%">
+              <div class="skill-card__icon">🟢</div>
+              <span class="skill-card__name">Node.js</span>
+              <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+            </div>
+            <div class="skill-card" style="--skill-level: 87%">
+              <div class="skill-card__icon">🔥</div>
+              <span class="skill-card__name">Firebase</span>
+              <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+            </div>
+            <div class="skill-card" style="--skill-level: 82%">
+              <div class="skill-card__icon">🐬</div>
+              <span class="skill-card__name">MySQL</span>
+              <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+            </div>
+            <div class="skill-card" style="--skill-level: 82%">
+              <div class="skill-card__icon">🐘</div>
+              <span class="skill-card__name">PostgreSQL</span>
+              <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+            </div>
+            <div class="skill-card" style="--skill-level: 85%">
+              <div class="skill-card__icon">🔌</div>
+              <span class="skill-card__name">APIs RESTful</span>
+              <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+            </div>
+            <div class="skill-card" style="--skill-level: 80%">
+              <div class="skill-card__icon">🔴</div>
+              <span class="skill-card__name">Laravel</span>
+              <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Soporte TI Integral -->
+        <div class="reveal">
+          <h3 class="skills__category-title">Soporte TI Integral</h3>
+          <div class="skills__grid">
+            <div class="skill-card" style="--skill-level: 90%">
+              <div class="skill-card__icon">🔧</div>
+              <span class="skill-card__name">Mtto. HW/SW</span>
+              <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+            </div>
+            <div class="skill-card" style="--skill-level: 88%">
+              <div class="skill-card__icon">🌐</div>
+              <span class="skill-card__name">Redes</span>
+              <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+            </div>
+            <div class="skill-card" style="--skill-level: 90%">
+              <div class="skill-card__icon">🎧</div>
+              <span class="skill-card__name">Help Desk</span>
+              <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+            </div>
+            <div class="skill-card" style="--skill-level: 85%">
+              <div class="skill-card__icon">🖥️</div>
+              <span class="skill-card__name">Equipos POS</span>
+              <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+            </div>
+            <div class="skill-card" style="--skill-level: 87%">
+              <div class="skill-card__icon">💿</div>
+              <span class="skill-card__name">SO Win/Linux</span>
+              <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+            </div>
+            <div class="skill-card" style="--skill-level: 83%">
+              <div class="skill-card__icon">💾</div>
+              <span class="skill-card__name">Recup. Datos</span>
+              <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Software Corporativo -->
+        <div class="reveal">
+          <h3 class="skills__category-title">Software Corporativo</h3>
+          <div class="skills__grid">
+            <div class="skill-card" style="--skill-level: 88%">
+              <div class="skill-card__icon">📊</div>
+              <span class="skill-card__name">Sistema ICG</span>
+              <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+            </div>
+            <div class="skill-card" style="--skill-level: 85%">
+              <div class="skill-card__icon">📋</div>
+              <span class="skill-card__name">Sistema Melé</span>
+              <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+            </div>
+            <div class="skill-card" style="--skill-level: 85%">
+              <div class="skill-card__icon">⭐</div>
+              <span class="skill-card__name">Sistema Stellar</span>
+              <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+            </div>
+            <div class="skill-card" style="--skill-level: 90%">
+              <div class="skill-card__icon">📎</div>
+              <span class="skill-card__name">Office 365</span>
+              <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tools & Design -->
+        <div class="reveal">
+          <h3 class="skills__category-title">Tools & Design</h3>
+          <div class="skills__grid">
+            <div class="skill-card" style="--skill-level: 90%">
+              <div class="skill-card__icon">🐙</div>
+              <span class="skill-card__name">Git / GitHub</span>
+              <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+            </div>
+            <div class="skill-card" style="--skill-level: 90%">
+              <div class="skill-card__icon">🖌️</div>
+              <span class="skill-card__name">Figma</span>
+              <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+            </div>
+            <div class="skill-card" style="--skill-level: 82%">
+              <div class="skill-card__icon">🎨</div>
+              <span class="skill-card__name">Photoshop / Canva</span>
+              <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+            </div>
+            <div class="skill-card" style="--skill-level: 88%">
+              <div class="skill-card__icon">📐</div>
+              <span class="skill-card__name">Scrum / Scrumban</span>
+              <div class="skill-card__level"><div class="skill-card__level-bar"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer section" id="footer">
+    <div class="container">
+      <div class="footer__cta reveal">
+        <h2 class="footer__cta-title">
+          ¿Trabajamos <span class="text-gradient">juntos</span>?
+        </h2>
+        <p class="footer__cta-text">
+          Siempre estoy abierta a nuevos proyectos, colaboraciones creativas e ideas interesantes. ¡Hablemos!
+        </p>
+        <a href="mailto:ana@example.com" class="btn btn-primary" id="footer-cta-email">
+          <i data-lucide="mail" style="width:18px;height:18px"></i>
+          Contáctame
+        </a>
+      </div>
+
+      <div class="footer__social reveal reveal-delay-1">
+        <a href="https://github.com/Anacordoba10" target="_blank" rel="noopener noreferrer" class="footer__social-link tooltip" data-tooltip="GitHub" id="footer-github" aria-label="GitHub">
+          <i data-lucide="github"></i>
+        </a>
+        <a href="mailto:ana@example.com" class="footer__social-link tooltip" data-tooltip="Email" id="footer-email" aria-label="Email">
+          <i data-lucide="mail"></i>
+        </a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer__social-link tooltip" data-tooltip="LinkedIn" id="footer-linkedin" aria-label="LinkedIn">
+          <i data-lucide="linkedin"></i>
+        </a>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">
+          Diseñado y desarrollado con 💜 por <span>Ana Córdoba</span> · 2026
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== SCRIPTS ========== -->
+  <script src="js/particles.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

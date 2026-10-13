@@ -1,0 +1,171 @@
+/* ============================================
+   Base Styles — Global & Typography
+   Portafolio Ana Córdoba
+   ============================================ */
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  color: var(--clr-text-primary);
+  background-color: var(--clr-bg-primary);
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--clr-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--clr-primary), var(--clr-accent));
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--clr-primary-light), var(--clr-accent-pink));
+}
+
+/* Firefox scrollbar */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--clr-primary) var(--clr-bg-primary);
+}
+
+/* ---- Typography ---- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-bold);
+  color: var(--clr-text-primary);
+}
+
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+
+p {
+  color: var(--clr-text-secondary);
+  line-height: 1.8;
+}
+
+/* ---- Layout Utilities ---- */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 5vw, 2rem);
+}
+
+.section {
+  position: relative;
+  padding: var(--section-padding);
+}
+
+/* ---- Text Utilities ---- */
+.text-gradient {
+  background: var(--grad-hero);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-glow {
+  text-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+}
+
+.text-accent {
+  color: var(--clr-accent);
+}
+
+.text-muted {
+  color: var(--clr-text-secondary);
+}
+
+/* ---- Section Title ---- */
+.section-header {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  color: var(--clr-accent);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: var(--space-sm);
+  display: block;
+}
+
+.section-title {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
+  margin-bottom: var(--space-md);
+}
+
+.section-divider {
+  width: 60px;
+  height: 3px;
+  background: var(--grad-primary);
+  margin: 0 auto;
+  border-radius: var(--radius-full);
+  box-shadow: var(--glow-primary);
+}
+
+/* ---- Visibility Helpers ---- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* ---- Reveal Animation Base (Progressive Enhancement) ---- */
+.reveal {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.has-scroll-reveal .reveal {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.has-scroll-reveal .reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+.reveal-delay-6 { transition-delay: 0.6s; }
+
+/* ---- Pixel Art Image Rendering ---- */
+.pixel-art,
+.about__image-frame img,
+.project-card__image img {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* ---- Fallback gradients for missing images ---- */
+.about__image-frame {
+  background: linear-gradient(135deg, var(--clr-bg-tertiary), var(--clr-primary-dark));
+}
+
+.project-card__image {
+  background: linear-gradient(135deg, var(--clr-bg-secondary), var(--clr-bg-tertiary));
+}
+
