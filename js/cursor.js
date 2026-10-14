@@ -33,7 +33,6 @@ class CustomCursor {
         pointer-events: none;
         opacity: 0;
         transition: opacity 0.3s ease;
-        mix-blend-mode: difference;
       }
 
       .custom-cursor.visible {
@@ -42,27 +41,38 @@ class CustomCursor {
 
       .custom-cursor__dot {
         position: absolute;
-        width: 6px;
-        height: 6px;
-        background: #fff;
-        border-radius: 50%;
+        width: 8px;
+        height: 8px;
+        background: #F1E8FF;
+        border-radius: 0px;
+        box-shadow: 2px 2px 0px #0A0814, 0 0 8px rgba(192, 132, 252, 0.9);
         transform: translate(-50%, -50%);
+        transition: transform 0.15s steps(3, end), background 0.15s ease;
       }
 
       .custom-cursor__ring {
         position: absolute;
-        width: 36px;
-        height: 36px;
-        border: 1.5px solid rgba(255, 255, 255, 0.5);
-        border-radius: 50%;
-        transform: translate(-50%, -50%);
-        transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
+        width: 26px;
+        height: 26px;
+        border: 2px solid #C084FC;
+        border-radius: 0px;
+        transform: translate(-50%, -50%) rotate(0deg);
+        transition: width 0.15s steps(4, end), height 0.15s steps(4, end), border-color 0.15s ease, transform 0.2s steps(4, end), box-shadow 0.15s ease;
+        box-shadow: 2px 2px 0px #0A0814;
+      }
+
+      .custom-cursor.hovering .custom-cursor__dot {
+        transform: translate(-50%, -50%) scale(1.4);
+        background: #FDE047;
+        box-shadow: 2px 2px 0px #4C1D95, 0 0 12px rgba(253, 224, 71, 1);
       }
 
       .custom-cursor.hovering .custom-cursor__ring {
-        width: 52px;
-        height: 52px;
-        border-color: rgba(139, 92, 246, 0.8);
+        width: 38px;
+        height: 38px;
+        border-color: #FDE047;
+        transform: translate(-50%, -50%) rotate(45deg);
+        box-shadow: 3px 3px 0px #0A0814, 0 0 16px rgba(139, 92, 246, 0.6);
       }
 
       /* Hide default cursor */

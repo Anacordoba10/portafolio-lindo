@@ -9,25 +9,31 @@ body {
   font-weight: var(--fw-regular);
   color: var(--clr-text-primary);
   background-color: var(--clr-bg-primary);
+  background-image: radial-gradient(rgba(139, 92, 246, 0.14) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-attachment: fixed;
   overflow-x: hidden;
 }
 
-/* Custom Scrollbar */
+/* Retro Pixel Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
   background: var(--clr-bg-primary);
+  border-left: 1px solid rgba(139, 92, 246, 0.15);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--clr-primary), var(--clr-accent));
-  border-radius: var(--radius-full);
+  background: var(--clr-primary);
+  border: 2px solid var(--clr-bg-primary);
+  border-radius: 2px;
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.3), inset -1px -1px 0 rgba(0, 0, 0, 0.4);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, var(--clr-primary-light), var(--clr-accent-pink));
+  background: var(--clr-accent);
 }
 
 /* Firefox scrollbar */
@@ -41,6 +47,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-weight: var(--fw-bold);
   color: var(--clr-text-primary);
+  letter-spacing: 0.5px;
 }
 
 h1 { font-size: var(--fs-h1); }
@@ -67,10 +74,8 @@ p {
 
 /* ---- Text Utilities ---- */
 .text-gradient {
-  background: var(--grad-hero);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #D8B4FE;
+  text-shadow: 2px 2px 0px #0A0814, 0 0 16px rgba(216, 180, 254, 0.7);
 }
 
 .text-glow {
@@ -85,15 +90,15 @@ p {
   color: var(--clr-text-secondary);
 }
 
-/* ---- Section Title ---- */
+/* ---- Pixel Section Title ---- */
 .section-header {
   text-align: center;
   margin-bottom: var(--space-3xl);
 }
 
 .section-label {
-  font-family: var(--font-mono);
-  font-size: var(--fs-small);
+  font-family: var(--font-retro);
+  font-size: 0.8rem;
   color: var(--clr-accent);
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -102,18 +107,43 @@ p {
 }
 
 .section-title {
-  font-size: var(--fs-h2);
+  font-family: var(--font-pixel);
+  font-size: clamp(2.2rem, 4.5vw, 3rem);
   font-weight: var(--fw-bold);
   margin-bottom: var(--space-md);
+  letter-spacing: 1px;
 }
 
 .section-divider {
-  width: 60px;
-  height: 3px;
-  background: var(--grad-primary);
-  margin: 0 auto;
-  border-radius: var(--radius-full);
-  box-shadow: var(--glow-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: var(--space-sm) auto 0;
+}
+
+.section-divider::before,
+.section-divider::after {
+  content: '';
+  width: 56px;
+  height: 4px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--clr-primary) 0px,
+    var(--clr-primary) 6px,
+    transparent 6px,
+    transparent 10px
+  );
+  box-shadow: 0 0 6px rgba(139, 92, 246, 0.4);
+}
+
+.section-divider-star {
+  color: #FDE047;
+  font-family: var(--font-arcade);
+  font-size: 0.85rem;
+  text-shadow: 2px 2px 0px #0A0814, 0 0 10px rgba(253, 224, 71, 0.8);
+  display: inline-block;
+  animation: float 2.5s steps(6, end) infinite;
 }
 
 /* ---- Visibility Helpers ---- */
@@ -168,4 +198,39 @@ p {
 .project-card__image {
   background: linear-gradient(135deg, var(--clr-bg-secondary), var(--clr-bg-tertiary));
 }
+
+/* ---- Retro Selection ---- */
+::selection {
+  background: #C084FC;
+  color: #0D0B1A;
+}
+
+/* ---- CRT Screen Filter ---- */
+.crt-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+body.crt-active .crt-overlay {
+  opacity: 1;
+  background:
+    linear-gradient(rgba(18, 16, 26, 0) 50%, rgba(0, 0, 0, 0.35) 50%),
+    linear-gradient(90deg, rgba(255, 0, 0, 0.04), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.04));
+  background-size: 100% 3px, 6px 100%;
+  box-shadow: inset 0 0 120px rgba(0, 0, 0, 0.7);
+}
+
+body.crt-active {
+  text-shadow: 0 0 2px rgba(192, 132, 252, 0.6);
+}
+
+/* ---- Retro Click Sparks ---- */
+.click-pixel-spark {
+  border-radius: 0px;
+}
+
 

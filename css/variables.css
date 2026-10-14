@@ -50,9 +50,12 @@
   --glow-pink:           0 0 30px rgba(232, 121, 249, 0.25);
 
   /* ---- Typography ---- */
-  --font-heading:        'Space Grotesk', sans-serif;
+  --font-heading:        'Pixelify Sans', cursive, sans-serif;
   --font-body:           'Inter', sans-serif;
-  --font-mono:           'JetBrains Mono', 'Fira Code', monospace;
+  --font-pixel:          'Pixelify Sans', cursive, sans-serif;
+  --font-retro:          'Silkscreen', monospace;
+  --font-arcade:         'Press Start 2P', monospace;
+  --font-mono:           'Silkscreen', 'JetBrains Mono', monospace;
 
   /* Font sizes — fluid clamp */
   --fs-display:          clamp(2.8rem, 6vw, 5rem);
@@ -86,12 +89,20 @@
   --nav-height:          72px;
   --section-padding:     clamp(4rem, 10vh, 8rem) clamp(1rem, 5vw, 2rem);
 
-  /* ---- Borders ---- */
-  --radius-sm:           8px;
-  --radius-md:           12px;
-  --radius-lg:           16px;
-  --radius-xl:           24px;
-  --radius-full:         9999px;
+  /* ---- Borders (Sharp Pixel Edges) ---- */
+  --radius-sm:           0px;
+  --radius-md:           2px;
+  --radius-lg:           3px;
+  --radius-xl:           4px;
+  --radius-full:         0px;
+
+  /* ---- Pixel Shadow & Bevel Tokens ---- */
+  --pixel-shadow-sm:     2px 2px 0px #0A0814;
+  --pixel-shadow-md:     4px 4px 0px #0A0814, 0 0 16px rgba(139, 92, 246, 0.25);
+  --pixel-shadow-primary: 3px 3px 0px #4C1D95, 0 0 20px rgba(139, 92, 246, 0.4);
+  --pixel-shadow-card:   4px 4px 0px #0A0814, 0 0 24px rgba(139, 92, 246, 0.15);
+  --pixel-bevel-out:     inset 1px 1px 0px rgba(255, 255, 255, 0.3), inset -2px -2px 0px rgba(0, 0, 0, 0.7);
+  --pixel-bevel-in:      inset 2px 2px 0px rgba(0, 0, 0, 0.8), inset -1px -1px 0px rgba(255, 255, 255, 0.2);
 
   /* ---- Transitions ---- */
   --transition-fast:     150ms ease;
